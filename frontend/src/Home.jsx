@@ -26,7 +26,7 @@ const [todoTime, setTodoTime] = useState();
     }, 60000)
 
     let postTodo = () => {
-    axios.post("http://localhost:3000/2due/todos/", {todoTitle, todoText, todoTime})
+    axios.post("http://45.61.58.133:3000/2due/todos/", {todoTitle, todoText, todoTime})
     .then(result => {
         console.log(result); 
     })
@@ -35,7 +35,7 @@ const [todoTime, setTodoTime] = useState();
     }
 
     let handleDelete = (id) => {
-    axios.delete('http://localhost:3000/2due/todos/'+id)
+    axios.delete('http://45.61.58.133:3000/2due/todos/'+id)
     .then(res => {
         console.log(res)
     })
@@ -43,7 +43,7 @@ const [todoTime, setTodoTime] = useState();
     }
 
     useEffect(() => {
-    axios.get('http://localhost:3000/2due/todos')
+    axios.get('http://45.61.58.133:3000/2due/todos')
     .then(result => setTodos(result.data))
     .catch(err => console.log(err))
     }, [setTimeout(() => {

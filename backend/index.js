@@ -15,7 +15,11 @@ const corsOptions = {
     optionSuccessStatus: 200
 }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors({
+    origin: "https://2due-v6.netlify.app", 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+}))
 
 
 console.log(`${process.env.DB_PASS}`)
